@@ -1,6 +1,6 @@
 # Real Robots Play Football
 
-<img src="Images/robot.jpg" alt="drawing" height="150"/>
+<img src="Images/robot.jpg" alt="drawing" height="300"/>
 
 ## Prerequisites:
 
@@ -42,25 +42,22 @@ For better performance, some tuning values are used and they can be changed easi
 
   * Be sure that ROS and OpenCV are installed properly inside Raspberry Pi and Pc
   * Put the *Arduino_four_motors_driver.ino* file inside Arduino using "Arduino IDE"
-  * Connect everything as in the image below 
-  <img src="Images/Scheme.png" alt="drawing" height="150"/>
+  * Connect everything as in the image below <img src="Images/Scheme.png" alt="drawing" height="400"/>
   * Check that all the connections on Arduino DUE are consistent with the ones of "Arduino_four_motors_driver.ino" file
-  * Put the robot in the middle of his half part of arena (the one considered has dimension of 180x120) perpendicularly with respect the opponent goal,as shown below
-  <img src="Images/arena.jpg" alt="drawing" height="150"/>
+  * Put the robot in the middle of his half part of arena (the one considered has dimension of 180x120) perpendicularly with respect the opponent goal,as shown below <img src="Images/arena.jpg" alt="drawing" height="600"/>
   * Be sure that Raspberry Pi and the computer are connected to the same Internet Network
   * Create a workspace (*e.g.,called "RPF"*) and put the *"RobotsPlayFootball"* package inside, then execute ```catkin_make``` in a terminal
   * In another terminal launch the ```roscore```
   * Connect to raspberry using the ssh command in a third terminal (*e.g.*, ```ssh pi@raspberryIp```)
-  * Use ROS_MASTER_URI (*e.g.*, ```export ROS_MASTER_URI=http://pcIP:11311/```)
-    and ROS_EXPORT_IP (*e.g.*, ```export ROS_IP=raspberryIp```) on a raspberry terminal to enable the message exchanging with the master (the Pc)
-  * Install *raspicam_node* on Raspberry [link](https://github.com/UbiquityRobotics/raspicam_node).
-  * Calibrate the camera [link](http://wiki.ros.org/camera_calibration) and take the resolution used and the *focal length* (in pixels) obtained
+  * Use ROS_MASTER_URI (*e.g.*, ```export ROS_MASTER_URI=http://pcIP:11311/```) and ROS_EXPORT_IP (*e.g.*, ```export ROS_IP=raspberryIp```) on a raspberry terminal to enable the message exchanging with the master (the Pc)
+  * Install *raspicam_node* on Raspberry (https://github.com/UbiquityRobotics/raspicam_node).
+  * Calibrate the camera (http://wiki.ros.org/camera_calibration) and take the resolution used and the *focal length* (in pixels) obtained
   * Change this values inside the *Ball-dedection.py* file
-  * Once the Raspberry is connected, launch the *raspicam_node* using the command : ```roslaunch raspicam_node camerav2_*ResolutionUsed*.launch```
+  * Once the Raspberry is connected, launch the *raspicam_node* using the command: ```roslaunch raspicam_node camerav2_*ResolutionUsed*.launch```
   * In the first terminal (where catkin_make was used) launch the *Ball-detection* script ```rosrun main Ball-detection.py```
   * In a fourth terminal launch the *Controller* script by using the command "rosrun main Controller.py"
   * Connect raspberry using another terminal with ssh command and use again ROS MASTER_URI and ROS_EXPORT_IP 
-  * Create a simple ROS workspace in Raspberry (*e.g.,called "RPF"*) with one package called *"RobotsPlayFootball"*: inside the src folder of the main package, put the file "arduino_four_motors.py" and 		compile it using ```chmod +x``` in the terminal
+  * Create a simple ROS workspace in Raspberry (*e.g.,called "RPF"*) with one package called *"RobotsPlayFootball"*: inside the src folder of the main package, put the file "arduino_four_motors.py" and compile it using ```chmod +x``` in the terminal
   * Finally launch arduino_four_motors using the command ```rosrun main arduino_four_motors.py```
 
 ## Limits of The project:
@@ -85,7 +82,7 @@ For better performance, some tuning values are used and they can be changed easi
 
   - Focal Length and resolution of the camera inside *Ball-Detection.Py*
 
-  - Threshold for the alignment of the angle *t2*, the threshold for position where the robot must go to push the ball *t3* and the threshold used to decie the minimum distance
+  - Threshold for the alignment of the angle *t2*, the threshold for position where the robot must go to push the ball *t3* and the threshold used to decide the minimum distance
 	between ball and robot *t1* inside *Controller.Py*
 
   - Scaling Factors for the velocities and RPM computed inside *Controller.Py* and the maximum velocity the robot can go in some direction
@@ -98,4 +95,4 @@ For better performance, some tuning values are used and they can be changed easi
   - *f* variable inside *Controller.Py* which is used to say how many times the robot must push the ball after it is aligned before going back and restart all the computations
 
   - The *L1*, *L2* and *R* (radius of the wheel) variables inside *Controller.Py* as shown below (notice that motors 2 and 3 are inverted in the code used) 
-	<img src="Images/Robot1.jpg" alt="drawing" height="150"/>
+	<img src="Images/Robot1.png" alt="drawing" height="300"/>
