@@ -1,6 +1,6 @@
 # Real Robots Play Football
 
-<img src="images/robot.jpg" alt="drawing" height="150"/>
+<img src="Images/robot.jpg" alt="drawing" height="150"/>
 
 ## Prerequisites:
 
@@ -43,10 +43,10 @@ For better performance, some tuning values are used and they can be changed easi
   * Be sure that ROS and OpenCV are installed properly inside Raspberry Pi and Pc
   * Put the *Arduino_four_motors_driver.ino* file inside Arduino using "Arduino IDE"
   * Connect everything as in the image below 
-  <img src="images/Scheme.png" alt="drawing" height="150"/>
+  <img src="Images/Scheme.png" alt="drawing" height="150"/>
   * Check that all the connections on Arduino DUE are consistent with the ones of "Arduino_four_motors_driver.ino" file
   * Put the robot in the middle of his half part of arena (the one considered has dimension of 180x120) perpendicularly with respect the opponent goal,as shown below
-  <img src="images/arena.jpg" alt="drawing" height="150"/>
+  <img src="Images/arena.jpg" alt="drawing" height="150"/>
   * Be sure that Raspberry Pi and the computer are connected to the same Internet Network
   * Create a workspace (*e.g.,called "RPF"*) and put the *"RobotsPlayFootball"* package inside, then execute ```catkin_make``` in a terminal
   * In another terminal launch the ```roscore```
@@ -98,4 +98,4 @@ For better performance, some tuning values are used and they can be changed easi
   - *f* variable inside *Controller.Py* which is used to say how many times the robot must push the ball after it is aligned before going back and restart all the computations
 
   - The *L1*, *L2* and *R* (radius of the wheel) variables inside *Controller.Py* as shown below (notice that motors 2 and 3 are inverted in the code used) 
-	<img src="images/Robot1.jpg" alt="drawing" height="150"/>
+	<img src="Images/Robot1.jpg" alt="drawing" height="150"/>
